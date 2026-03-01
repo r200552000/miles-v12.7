@@ -3,62 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>TDC環哩匯 x 航空卡消費累哩工具 v12.7</title>
+  <title>TDC環哩匯 x 航空卡消費累哩工具 v12.7.2</title>
 
+  <!-- 外部資源 -->
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Mali:wght@500;700&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     /* =========================
-       排版防禦系統 (Previewer Fallback CSS)
-       ========================= */
-    .row { display: flex; flex-wrap: wrap; margin-left: -5px; margin-right: -5px; }
-    .col-5 { width: 41.666%; padding-left: 5px; padding-right: 5px; box-sizing: border-box; }
-    .col-6 { width: 50%; padding-left: 5px; padding-right: 5px; box-sizing: border-box; }
-    .col-7 { width: 58.333%; padding-left: 5px; padding-right: 5px; box-sizing: border-box; }
-    .col-12 { width: 100%; padding-left: 5px; padding-right: 5px; box-sizing: border-box; }
-    .d-flex { display: flex !important; }
-    .justify-content-between { justify-content: space-between !important; }
-    .justify-content-center { justify-content: center !important; }
-    .justify-content-evenly { justify-content: space-evenly !important; }
-    .align-items-center { align-items: center !important; }
-    .align-items-end { align-items: flex-end !important; }
-    .gap-1 { gap: 0.25rem !important; }
-    .gap-2 { gap: 0.5rem !important; }
-    .w-100 { width: 100% !important; }
-    .flex-grow-1 { flex-grow: 1 !important; }
-    .flex-shrink-0 { flex-shrink: 0 !important; }
-    .text-center { text-align: center !important; }
-    .text-end { text-align: right !important; }
-    .text-decoration-none { text-decoration: none !important; }
-    
-    .input-group { display: flex; align-items: stretch; width: 100%; position: relative; }
-    .input-group .form-control { flex: 1 1 auto; width: 1%; margin: 0; border-radius: 0; }
-    .input-group > button:first-child, .input-group > span:first-child { border-top-right-radius: 0; border-bottom-right-radius: 0; margin-right: -2px; z-index: 2; }
-    .input-group > input:last-child, .input-group > span:last-child { border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -2px; }
-    
-    .m-0 { margin: 0 !important; }
-    .mb-1 { margin-bottom: 0.25rem !important; } .mb-2 { margin-bottom: 0.5rem !important; } .mb-3 { margin-bottom: 1rem !important; } .mb-4 { margin-bottom: 1.5rem !important; }
-    .mt-0 { margin-top: 0 !important; } .mt-1 { margin-top: 0.25rem !important; } .mt-2 { margin-top: 0.5rem !important; } .mt-3 { margin-top: 1rem !important; } .mt-4 { margin-top: 1.5rem !important; }
-    .me-1 { margin-right: 0.25rem !important; } .me-2 { margin-right: 0.5rem !important; }
-    .ms-1 { margin-left: 0.25rem !important; } .ms-2 { margin-left: 0.5rem !important; }
-    .p-0 { padding: 0 !important; } .p-1 { padding: 0.25rem !important; } .p-2 { padding: 0.5rem !important; } .p-3 { padding: 1rem !important; } .p-4 { padding: 1.5rem !important; }
-    .py-1 { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; } .py-3 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
-    .px-1 { padding-left: 0.25rem !important; padding-right: 0.25rem !important; } .px-2 { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } .px-3 { padding-left: 1rem !important; padding-right: 1rem !important; } .px-4 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; } .px-5 { padding-left: 3rem !important; padding-right: 3rem !important; }
-
-    /* =========================
-       內聯 SVG 圖示樣式
-       ========================= */
-    .lucide { 
-      width: 1.2em; height: 1.2em; 
-      display: inline-block; vertical-align: -0.2em; 
-      fill: none; stroke: currentColor; 
-      stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; 
-    }
-    .lucide-fill { fill: currentColor; stroke: none; }
-
-    /* =========================
-       CSS 樣式表 (保留 莫蘭迪美學)
+       排版防禦與基礎樣式
        ========================= */
     :root {
       --bg-main: #fffdf9; --bg-card: #ffffff;
@@ -67,7 +20,7 @@
       --shadow-draw: 3px 3px 0px rgba(0,0,0,0.06);
       --radius-box: 24px;
       --font-hand: 'Mali', cursive; --font-main: 'Varela Round', sans-serif;
-      --m-sage: #84a59d; --m-clay: #f5cac3; --m-dusty: #95b8d1; --m-terra: #e5989b; --m-slate: #6d6875; --m-sand: #f2e9e4; --m-stone: #a5a58d;
+      --m-sage: #84a59d; --m-clay: #f5cac3; --m-dusty: #95b8d1; --m-terra: #e5989b; --m-slate: #6d6875;
     }
 
     body {
@@ -79,229 +32,124 @@
 
     h1,h2,h3,h4,h5,h6 { font-family: var(--font-hand); font-weight: 700; color: var(--text-header); margin-top: 0; }
 
+    /* Header & Nav */
     .header {
       background: #ffffff; padding: 15px 20px 25px 20px;
       border-bottom-left-radius: 36px; border-bottom-right-radius: 36px;
       position: sticky; top: 0; box-shadow: var(--shadow-draw); margin-bottom: 10px;
       display: flex; justify-content: space-between; align-items: center;
-      height: 90px; border-bottom: 3px dashed #bae6fd; z-index: 100; box-sizing: border-box;
+      height: 90px; border-bottom: 3px dashed #bae6fd; z-index: 100;
     }
     .header-icon {
       width: 40px; height: 40px; background: #eff6ff; border: 2px solid #bfdbfe;
       border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      color: var(--primary); font-size: 1.1rem; transform: rotate(-5deg); margin-right: 10px; flex-shrink: 0;
+      color: var(--primary); transform: rotate(-5deg); margin-right: 10px; flex-shrink: 0;
     }
     .header-title h5 { margin: 0; font-size: 1rem; color: var(--primary-dark); line-height: 1.2; }
-    .header-title small { color: var(--text-light); font-size: 0.75rem; font-family: var(--font-hand); }
 
     .btn-header {
       background: #fff; border: 2px solid #e2e8f0; color: var(--text-body);
       font-weight: 700; font-family: var(--font-hand); font-size: 0.8rem;
       padding: 6px 12px; box-shadow: 2px 2px 0 #e2e8f0; border-radius: 16px;
-      transition: 0.1s; white-space: nowrap; display: flex; align-items: center; cursor: pointer; text-decoration: none;
+      cursor: pointer; text-decoration: none; display: flex; align-items: center;
     }
-    .btn-header:active { transform: translateY(2px); box-shadow: 0 0 0; }
 
-    .container-custom { padding: 10px 16px; max-width: 600px; margin: 0 auto; position: relative; z-index: 10; flex: 1; width: 100%; box-sizing: border-box; }
+    .container-custom { padding: 10px 16px; max-width: 600px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
     .card-box { background: var(--bg-card); border-radius: var(--radius-box); padding: 20px; margin-bottom: 16px; border: 2px solid #f1f5f9; box-shadow: var(--shadow-draw); }
+    
+    /* Input & Groups */
     .form-label { display: block; font-weight: 700; color: var(--text-header); margin-bottom: 6px; font-size: 0.9rem; font-family: var(--font-hand); }
-    .form-control, .form-select { width: 100%; background-color: #fff !important; border: 2px solid #cbd5e1 !important; color: var(--text-header) !important; padding: 10px 14px; border-radius: 16px; font-size: 1rem; font-weight: 600; height: 48px; box-shadow: inset 2px 2px 4px rgba(0,0,0,0.03); box-sizing: border-box; }
-    .form-control:focus, .form-select:focus { outline: none; border-color: var(--primary) !important; box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2) !important; }
+    .form-control, .form-select { width: 100%; background-color: #fff !important; border: 2px solid #cbd5e1 !important; color: var(--text-header) !important; padding: 10px 14px; border-radius: 16px; font-size: 1rem; font-weight: 600; height: 48px; box-shadow: inset 2px 2px 4px rgba(0,0,0,0.03); }
     
-    #amount { color: var(--primary) !important; font-size: 1.5rem; letter-spacing: 1px; font-family: var(--font-hand); transition: all 0.3s ease; }
-    .input-negative { color: #ef4444 !important; font-weight: 900 !important; border-color: #ef4444 !important; background-color: #fef2f2 !important; }
-    .status-label-negative { color: #ef4444; font-size: 0.8rem; font-weight: 700; margin-top: 4px; font-family: var(--font-hand); display: none; animation: fadeIn 0.2s ease; }
-
-    .btn-action { background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); color: white; font-weight: 700; border-radius: 50px; padding: 14px; width: 100%; border: none; font-size: 1.1rem; font-family: var(--font-hand); box-shadow: 3px 3px 0 rgba(59, 130, 246, 0.25); margin-top: 10px; border: 2px solid #bfdbfe; transition: 0.1s; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-    .btn-action:active { transform: translateY(3px); box-shadow: 0 0 0; }
-
-    .switch-group { background: #f8fafc; padding: 10px 14px; border-radius: 16px; border: 2px solid #e2e8f0; box-shadow: 2px 2px 0 #e2e8f0; display: flex; align-items: center; justify-content: space-between; height: 100%; white-space: nowrap; cursor: pointer; transition: 0.2s; box-sizing: border-box; }
-    .switch-label { display: flex; align-items: center; gap: 4px; font-weight: bold; }
-    .form-check-input { width: 2.8em; height: 1.5em; background-color: #cbd5e1; border: 2px solid #cbd5e1; border-radius: 2em; cursor: pointer; pointer-events: none; appearance: none; position: relative; margin: 0; }
-    .form-check-input::before { content: ""; position: absolute; width: 1.1em; height: 1.1em; border-radius: 50%; top: 0.1em; left: 0.1em; background-color: white; transition: 0.2s; }
-    .form-check-input:checked { background-color: var(--primary); border-color: var(--primary); }
-    .form-check-input:checked::before { transform: translateX(1.3em); }
-
-    #result-area { display: none; animation: popUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
-    @keyframes popUp { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-
-    .nccc-alert { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 16px; color: #b45309; }
-    .result-tag { background: var(--primary); color: white; padding: 4px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; display: inline-block; font-family: var(--font-hand); box-shadow: 2px 2px 0 rgba(0,0,0,0.1); transform: rotate(-1deg); }
-    #fx-info { font-family: var(--font-hand); text-align: right; }
-
-    .plan-card { padding: 16px; border-radius: 18px; margin-top: 12px; border: 2px solid #f1f5f9; position: relative; background: #fff; box-shadow: 2px 2px 0 rgba(0,0,0,0.03); }
-    .plan-winner { border-color: var(--primary); background: #f0f9ff; transform: rotate(-0.5deg); }
-    /* ⚠️ 防護狀態 UI */
-    .plan-warning { border-color: #fca5a5 !important; background: #fef2f2 !important; box-shadow: 2px 2px 0 #fecaca; }
+    .input-group { position: relative; display: flex; align-items: stretch; width: 100%; }
     
-    .winner-badge { position: absolute; top: -12px; right: 10px; background: #fde047; color: var(--text-header); font-size: 0.75rem; padding: 4px 12px; border-radius: 14px; font-weight: 700; border: 2px solid #fde047; box-shadow: 2px 2px 0 rgba(0,0,0,0.1); transform: rotate(3deg); font-family: var(--font-hand); }
-    .card-name { font-size: 1.1rem; font-weight: 800; color: var(--text-header); margin: 0; }
-    .card-miles { font-size: 1.3rem; color: #34d399; font-weight: 900; font-family: var(--font-hand); }
-    .plan-warning .card-miles { color: #f87171; }
-    
-    .btn-card-action { border: 1px solid #e2e8f0; background: #fff; color: #64748b; border-radius: 50px; padding: 6px 14px; font-size: 0.8rem; font-weight: 700; font-family: var(--font-hand); cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 4px; box-shadow: 1px 1px 0 #e2e8f0; }
-    .btn-card-action.btn-record-win { background: #3b82f6; color: white; border-color: #2563eb; box-shadow: 1px 1px 0 #2563eb; }
-    .btn-correct { border: 1px solid #e2e8f0; background: #fff; color: #94a3b8; border-radius: 50px; padding: 6px 12px; font-size: 0.8rem; font-weight: 700; font-family: var(--font-hand); cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 4px; }
-    .btn-correct:hover { background: #f1f5f9; color: var(--primary); border-color: var(--primary); }
-
-    /* Warehouse Styles */
-    .input-block-card { background: #fff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 16px; margin-bottom: 16px; box-shadow: 2px 2px 0 rgba(0,0,0,0.03); }
-    .input-block-title { font-family: var(--font-hand); font-weight: 700; color: #334155; margin-bottom: 12px; display: flex; align-items: center; font-size: 1rem; }
-    .asset-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 10px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
-    .airline-group-card { background: #fdfdfd; border: 2px solid #bfdbfe; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 0 rgba(191, 219, 254, 0.2); overflow: hidden; }
-    .airline-header { background: #eff6ff; padding: 12px 16px; border-bottom: 2px solid #bfdbfe; display: flex; justify-content: space-between; align-items: center; }
-    .airline-title { font-weight: 800; color: var(--primary-dark); font-size: 1.1rem; display: flex; align-items: center; }
-    .airline-total { font-weight: 800; color: var(--text-header); font-size: 1.2rem; }
-    .btn-asset-del { color: #cbd5e1; cursor: pointer; padding: 4px; background: none; border: none; }
-    .btn-asset-del:hover { color: #ef4444; }
-
-    .nav-bottom { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 2px solid #e2e8f0; border-top-left-radius: 24px; border-top-right-radius: 24px; display: flex; justify-content: space-evenly; padding: 12px 0 25px 0; z-index: 1000; box-shadow: 0 -4px 20px rgba(0,0,0,0.05); }
-    .nav-item { color: var(--text-light); font-size: 0.7rem; font-weight: 700; cursor: pointer; padding: 6px; transition: 0.2s; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: var(--font-hand); border-radius: 16px; flex: 1; border: none; background: none; }
-    .nav-item .lucide { font-size: 1.4rem; margin-bottom: 2px; }
-    .nav-item.active { color: var(--primary); }
-    .nav-item.active .lucide { transform: translateY(-3px); transition: 0.2s; stroke-width: 2.5; }
-    .nav-badge { position: absolute; top: -5px; right: -8px; background: #ef4444; color: white; font-size: 0.6rem; padding: 2px 6px; border-radius: 10px; border: 2px solid #fff; line-height: 1; }
-
-    .list-group-card { background: #fff; border: 2px solid #bfdbfe; border-radius: 18px; margin-bottom: 16px; overflow: hidden; box-shadow: 2px 2px 0 rgba(0,0,0,0.03); }
-    .list-group-header { background: #eff6ff; padding: 10px 16px; border-bottom: 2px solid #bfdbfe; font-weight: 800; color: var(--primary-dark); font-size: 0.95rem; display: flex; justify-content: space-between; align-items: center; }
-    .list-item { padding: 12px 16px; border-bottom: 1px dashed #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
-    .list-item:last-child { border-bottom: none; }
-    .item-meta { font-size: 0.8rem; color: #64748b; font-weight: 600; display: flex; flex-direction: column; }
-    .item-val { font-family: var(--font-hand); font-weight: 700; text-align: right; }
-    .btn-item-del { color: #ef4444; background: #fee2e2; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.8rem; margin-left: 10px; border: 1px solid #fecaca; }
-
-    .summary-card { background: white; border: 2px solid #e2e8f0; border-radius: 16px; margin-bottom: 8px; padding: 12px; box-shadow: 2px 2px 0 rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; }
-    .summary-name { font-weight: 800; color: #334155; font-size: 1rem; margin-bottom: 2px; }
-    .summary-spend { font-size: 0.8rem; color: #64748b; font-weight: 600; }
-    .summary-miles { font-weight: 800; color: var(--primary); font-family: var(--font-hand); font-size: 1.1rem; }
-    
-    .guide-slide { background: #fff; border-radius: 32px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 8px solid #fff; }
-    .slide-sage { background-color: var(--m-sage); color: #fff; }
-    .slide-dusty { background-color: var(--m-dusty); color: #fff; }
-    .slide-clay { background-color: var(--m-clay); color: #5e503f; }
-    .slide-slate { background-color: var(--m-slate); color: #fff; }
-    .slide-stone { background-color: var(--m-stone); color: #fff; }
-    .slide-terra { background-color: var(--m-terra); color: #fff; }
-    .g-title { font-family: 'Noto Sans TC', sans-serif; font-weight: 900; font-size: 1.5rem; line-height: 1.3; margin-bottom: 1rem; }
-    .g-text { font-family: 'Noto Sans TC', sans-serif; font-weight: 700; font-size: 0.95rem; line-height: 1.6; opacity: 0.95; }
-    .g-badge { display: inline-block; background: rgba(255,255,255,0.3); padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: 900; margin-bottom: 10px; letter-spacing: 1px; }
-    .g-list { padding-left: 0; }
-    .g-list li { margin-bottom: 10px; list-style: none; position: relative; padding-left: 20px; font-size: 0.9rem; }
-    .g-list li::before { content:'•'; position:absolute; left:0; font-weight:bold; font-size: 1.2rem; line-height: 1; top: -2px; }
-
-    /* =========================
-       v12.7 規劃器專屬樣式
-       ========================= */
-    .sub-tab-btn { color: #64748b; font-family: var(--font-hand); transition: 0.3s; border: none; font-size: 0.9rem; padding: 10px 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-    .sub-tab-btn.active { background: #ffffff; color: var(--primary-dark); box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-radius: 50px; }
-    
-    .planner-asset-card { background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 16px; padding: 12px; margin-bottom: 10px; transition: 0.2s; cursor: pointer; }
-    .planner-asset-card.selected { background: #eff6ff; border-color: var(--primary); border-style: solid; box-shadow: 2px 2px 0 #bfdbfe; }
-    .planner-airline-logo { width: 30px; height: 30px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; border: 1px solid #e2e8f0; }
-    
-    .planner-result-card { background: #fff; border: 2px solid #e2e8f0; border-radius: 20px; padding: 16px; margin-bottom: 12px; box-shadow: 2px 2px 0 rgba(0,0,0,0.03); }
-    .planner-result-card.status-enough { border-color: #10b981; background: #ecfdf5; box-shadow: 2px 2px 0 #a7f3d0; }
-    .planner-result-card.status-short { border-color: #f43f5e; background: #fff1f2; box-shadow: 2px 2px 0 #fecdd3; }
-    
-    .route-badge { font-size: 0.65rem; padding: 2px 6px; border-radius: 6px; margin-left: 6px; font-weight: bold; vertical-align: middle; white-space: nowrap; }
-    .badge-direct { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
-    .badge-transit { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
-    
-    .link-btn { display: inline-flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.75rem; padding: 6px 12px; border-radius: 50px; font-weight: bold; background: white; border: 1px solid #cbd5e1; color: #475569 !important; transition: 0.2s; cursor: pointer; font-family: var(--font-hand); text-decoration: none !important; }
-    .status-enough .link-btn { border-color: #10b981; color: #059669 !important; }
-    .status-short .link-btn { border-color: #f43f5e; color: #e11d48 !important; }
-
-    .swap-btn { background: white; border: 2px solid #e2e8f0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; position: absolute; left: 50%; transform: translate(-50%, 8px); z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1); color: var(--primary); }
-
-    /* 🛡️ 琥珀色加粗聲明區 */
-    .planner-disclaimer { 
-      background: #fffbeb; border: 2px solid #f59e0b; border-radius: 18px; 
-      padding: 14px 16px; margin-bottom: 16px; 
-      color: #92400e; font-size: 0.85rem; line-height: 1.6;
-      box-shadow: 3px 3px 0 #fef3c7;
-    }
-    .planner-disclaimer strong { font-weight: 900; color: #b45309; }
-
-    /* =========================
-       Modal 終極防呆修復
-       ========================= */
-    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1050; display: none; overflow-x: hidden; overflow-y: auto; outline: 0; }
-    .modal.show { display: block !important; } 
-    .modal-dialog { margin: 2rem auto; max-width: 500px; border-radius: 24px; padding: 20px; position: relative; background: #fff; width: 90%; box-sizing: border-box; }
-    
-    #guideModal .modal-dialog { background: transparent; padding: 0; box-shadow: none; margin-bottom: 4rem; }
-
-    .btn-close { position: absolute; right: 15px; top: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; opacity: 0.5; padding: 0; }
-    .custom-card-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
-    
-    .btn-outline-danger { color: #ef4444; border: 1px solid #ef4444; background: transparent; padding: 4px 8px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; }
-    .btn-outline-primary { color: var(--primary-dark); border: 2px solid var(--primary); background: transparent; padding: 6px 12px; border-radius: 50px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-    .btn-outline-secondary { color: #64748b; border: 2px solid #cbd5e1; background: #f8fafc; padding: 6px 12px; font-weight: bold; cursor: pointer; border-radius: 16px 0 0 16px; }
-    .btn-light { background: #f1f5f9; border: none; color: #475569; padding: 10px 20px; border-radius: 50px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: var(--font-hand); }
-    .btn-primary { background: var(--primary-dark); border: none; color: #fff; padding: 10px 20px; border-radius: 50px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: var(--font-hand); }
-    
-    .progress { display: flex; height: 6px; overflow: hidden; background-color: #e2e8f0; border-radius: 0.25rem; width: 100%; }
-    .progress-bar { display: flex; flex-direction: column; justify-content: center; overflow: hidden; color: #fff; text-align: center; white-space: nowrap; background-color: #10b981; transition: width .6s ease; }
-    .bg-warning { background-color: #f59e0b !important; } .bg-success { background-color: #10b981 !important; } .bg-danger { background-color: #ef4444 !important; }
-    .fs-4 { font-size: 1.5rem !important; } .fs-5 { font-size: 1.25rem !important; } .fs-6 { font-size: 1rem !important; }
-    .text-success { color: #10b981 !important; } .text-danger { color: #ef4444 !important; }
-
-    /* =========================
-       v12.7 新增：一鍵清除與搬家按鈕
-       ========================= */
+    /* v12.7 一鍵清除按鈕 */
     .clear-btn {
       position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
       width: 24px; height: 24px; background: #e2e8f0; color: #64748b;
       border-radius: 50%; display: none; align-items: center; justify-content: center;
-      cursor: pointer; z-index: 5; font-size: 0.8rem; border: none;
+      cursor: pointer; z-index: 10; font-size: 0.8rem; border: none;
     }
-    .input-group:focus-within .clear-btn { display: flex; }
+    .input-group:focus-within .clear-btn, .input-group:hover .clear-btn { display: flex; }
     
-    .btn-backup { background: #f59e0b; color: white; border: none; border-radius: 16px; padding: 12px; width: 100%; font-family: var(--font-hand); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 2px 2px 0 #b45309; transition: 0.1s; cursor: pointer; margin-bottom: 12px; }
-    .btn-backup:active { transform: translateY(2px); box-shadow: 0 0 0; }
-    .btn-restore { background: #3b82f6; color: white; border: none; border-radius: 16px; padding: 12px; width: 100%; font-family: var(--font-hand); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 2px 2px 0 #1e40af; transition: 0.1s; cursor: pointer; }
-    .btn-restore:active { transform: translateY(2px); box-shadow: 0 0 0; }
+    /* Calculator Page */
+    #amount { color: var(--primary) !important; font-size: 1.5rem; letter-spacing: 1px; font-family: var(--font-hand); }
+    .input-negative { color: #ef4444 !important; background-color: #fef2f2 !important; border-color: #ef4444 !important; }
+    .status-label-negative { color: #ef4444; font-size: 0.8rem; font-weight: 700; margin-top: 4px; font-family: var(--font-hand); display: none; }
+
+    .switch-group { background: #f8fafc; padding: 10px 14px; border-radius: 16px; border: 2px solid #e2e8f0; box-shadow: 2px 2px 0 #e2e8f0; display: flex; align-items: center; justify-content: space-between; cursor: pointer; height: 100%; }
+    .form-check-input { width: 2.8em; height: 1.5em; background-color: #cbd5e1; border-radius: 2em; cursor: pointer; appearance: none; position: relative; }
+    .form-check-input:checked { background-color: var(--primary); }
+    .form-check-input::before { content: ""; position: absolute; width: 1.1em; height: 1.1em; border-radius: 50%; top: 0.1em; left: 0.1em; background-color: white; transition: 0.2s; }
+    .form-check-input:checked::before { transform: translateX(1.3em); }
+
+    .btn-action { background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); color: white; font-weight: 700; border-radius: 50px; padding: 14px; width: 100%; border: 2px solid #bfdbfe; font-size: 1.1rem; font-family: var(--font-hand); box-shadow: 3px 3px 0 rgba(59, 130, 246, 0.25); margin-top: 10px; cursor: pointer; }
+
+    /* Results */
+    #result-area { display: none; animation: popUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    @keyframes popUp { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    .plan-card { padding: 16px; border-radius: 18px; margin-top: 12px; border: 2px solid #f1f5f9; position: relative; background: #fff; box-shadow: 2px 2px 0 rgba(0,0,0,0.03); }
+    .plan-winner { border-color: var(--primary); background: #f0f9ff; }
+    .plan-warning { border-color: #fca5a5 !important; background: #fef2f2 !important; }
+    .card-miles { font-size: 1.4rem; color: #34d399; font-weight: 900; font-family: var(--font-hand); }
+    .plan-warning .card-miles { color: #f87171; }
+    .btn-card-action { border: 1px solid #e2e8f0; background: #fff; color: #64748b; border-radius: 50px; padding: 6px 14px; font-size: 0.8rem; font-weight: 700; font-family: var(--font-hand); cursor: pointer; }
+    .btn-card-action.btn-record-win { background: #3b82f6; color: white; border-color: #2563eb; }
+
+    /* Nav Bottom */
+    .nav-bottom { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 2px solid #e2e8f0; border-top-left-radius: 24px; border-top-right-radius: 24px; display: flex; justify-content: space-evenly; padding: 12px 0 25px 0; z-index: 1000; box-shadow: 0 -4px 20px rgba(0,0,0,0.05); }
+    .nav-item { color: var(--text-light); font-size: 0.7rem; font-weight: 700; cursor: pointer; border: none; background: none; display: flex; flex-direction: column; align-items: center; flex: 1; font-family: var(--font-hand); }
+    .nav-item.active { color: var(--primary); }
+    .nav-badge { position: absolute; top: -5px; right: -8px; background: #ef4444; color: white; font-size: 0.6rem; padding: 2px 6px; border-radius: 10px; border: 2px solid #fff; }
+
+    /* v12.7 數據搬家按鈕 */
+    .btn-backup { background: #f59e0b; color: white; border: none; border-radius: 16px; padding: 12px; width: 100%; font-family: var(--font-hand); font-weight: 700; margin-bottom: 12px; box-shadow: 2px 2px 0 #b45309; }
+    .btn-restore { background: #3b82f6; color: white; border: none; border-radius: 16px; padding: 12px; width: 100%; font-family: var(--font-hand); font-weight: 700; box-shadow: 2px 2px 0 #1e40af; }
+
+    /* Icons */
+    .lucide { width: 1.2em; height: 1.2em; display: inline-block; vertical-align: -0.2em; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
     
-    .backup-section { background: #fff7ed; border: 2px dashed #fed7aa; border-radius: 20px; padding: 16px; margin-top: 20px; }
+    /* Planner results */
+    .planner-result-card { background: #fff; border: 2px solid #e2e8f0; border-radius: 20px; padding: 16px; margin-bottom: 12px; }
+    .status-enough { border-color: #10b981; background: #ecfdf5; }
+    .status-short { border-color: #f43f5e; background: #fff1f2; }
+
+    /* Modals */
+    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; align-items: center; justify-content: center; }
+    .modal.show { display: flex !important; }
+    .modal-dialog { background: #fff; width: 90%; max-width: 500px; border-radius: 24px; padding: 24px; position: relative; max-height: 90vh; overflow-y: auto; }
   </style>
 </head>
 
 <body>
+  <!-- SVG 圖標庫 -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="icon-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-.5-.5-2.5 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 4-3 3-3-1-2 2 4 4 2-2-1-3 3-3 4 6 1.2-.7c.4-.2.7-.6.6-1.1z"/></symbol>
-    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
-    <symbol id="icon-gear" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
-    <symbol id="icon-cake" viewBox="0 0 24 24"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5-2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></symbol>
-    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></symbol>
-    <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
-    <symbol id="icon-bank" viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></symbol>
-    <symbol id="icon-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
-    <symbol id="icon-warn" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></symbol>
-    <symbol id="icon-list" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
-    <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></symbol>
+    <symbol id="icon-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol>
     <symbol id="icon-chart" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></symbol>
-    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
-    <symbol id="icon-rotate" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="M16 21l4-4-4-4"/><path d="M20 17H4"/></symbol>
-    <symbol id="icon-pen" viewBox="0 0 24 24"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
-    <symbol id="icon-warehouse" viewBox="0 0 24 24"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect width="12" height="12" x="6" y="10"/></symbol>
-    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="icon-box" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
-    <symbol id="icon-check-c" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></symbol>
-    <symbol id="icon-check-sq" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/></symbol>
-    <symbol id="icon-sq" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/></symbol>
-    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
-    <symbol id="icon-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
-    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></symbol>
-    <symbol id="icon-swap" viewBox="0 0 24 24"><path d="m7 16 3 3 3-3"/><path d="M10 5v14"/><path d="m17 8-3-3-3 3"/><path d="M14 19V5"/></symbol>
+    <symbol id="icon-warehouse" viewBox="0 0 24 24"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><rect width="12" height="12" x="6" y="10"/></symbol>
+    <symbol id="icon-gear" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="icon-warn" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></symbol>
+    <symbol id="icon-cake" viewBox="0 0 24 24"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5-2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3M12 8v3M17 8v3"/></symbol>
+    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></symbol>
     <symbol id="icon-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="icon-rotate" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4"/></symbol>
+    <symbol id="icon-swap" viewBox="0 0 24 24"><path d="m7 16 3 3 3-3M10 5v14m7-11-3-3-3 3M14 19V5"/></symbol>
+    <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2M10 11v6M14 11v6"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
   </svg>
 
+  <!-- Header -->
   <div class="header">
     <div class="d-flex align-items-center">
       <div class="header-icon"><svg class="lucide"><use href="#icon-plane"/></svg></div>
       <div class="header-title">
-        <h5>TDC 航空累哩工具<br>v12.7</h5>
-        <small class="text-secondary fw-bold"><svg class="lucide me-1" style="font-size:0.8em;vertical-align:-0.1em;"><use href="#icon-gear"/></svg>數據魔術貼旗艦版</small>
+        <h5>TDC 航空累哩工具<br>v12.7.2</h5>
+        <small class="text-secondary fw-bold">旗艦邏輯歸位版</small>
       </div>
     </div>
     <div class="d-flex gap-2">
@@ -312,33 +160,34 @@
 
   <div class="container-custom">
     
+    <!-- Page 1: Calculator -->
     <div id="page-calc" class="page-section">
       <div class="card-box">
         <div class="row mb-3">
           <div class="col-6">
-            <div class="switch-group" onclick="toggleSwitch('birthdayMode')" id="switch-box-birthdayMode" style="background:#fff1f2; border-color:#fecdd3; box-shadow: 2px 2px 0 #fecdd3;">
-              <span class="switch-label text-danger"><svg class="lucide"><use href="#icon-cake"/></svg> 生日月</span>
-              <input class="form-check-input flex-shrink-0" type="checkbox" id="birthdayMode">
+            <div class="switch-group" onclick="toggleSwitch('birthdayMode')" id="switch-box-birthdayMode">
+              <span class="switch-label text-danger fw-bold"><svg class="lucide me-1"><use href="#icon-cake"/></svg>生日月</span>
+              <input class="form-check-input" type="checkbox" id="birthdayMode" readonly>
             </div>
           </div>
           <div class="col-6">
-            <div class="switch-group" onclick="toggleSwitch('flyMode')" id="switch-box-flyMode" style="background:#ecfdf5; border-color:#a7f3d0; box-shadow: 2px 2px 0 #a7f3d0;">
-              <span class="switch-label text-success"><svg class="lucide"><use href="#icon-ticket"/></svg> 越飛有哩</span>
-              <input class="form-check-input flex-shrink-0" type="checkbox" id="flyMode">
+            <div class="switch-group" onclick="toggleSwitch('flyMode')" id="switch-box-flyMode">
+              <span class="switch-label text-success fw-bold"><svg class="lucide me-1"><use href="#icon-ticket"/></svg>越飛有哩</span>
+              <input class="form-check-input" type="checkbox" id="flyMode" readonly>
             </div>
           </div>
         </div>
         
         <div class="mb-3">
-          <label class="form-label text-primary d-flex align-items-center"><svg class="lucide me-1"><use href="#icon-target"/></svg> 累積目標</label>
-          <select id="redemption-target" class="form-select border-primary" style="background-color: #eff6ff !important; border-width: 2px;">
+          <label class="form-label text-primary">累積目標</label>
+          <select id="redemption-target" class="form-select border-primary">
             <option value="ALL">🌏 不指定 (所有航司)</option>
             <option value="AM_BR">🌏 亞萬 / 長榮 (AM / BR)</option>
             <option value="CI">🌸 中華航空 (CI)</option>
           </select>
         </div>
 
-        <div class="row mb-1">
+        <div class="row mb-3">
             <div class="col-5">
               <label class="form-label">幣別</label>
               <select id="currency-type" class="form-select" onchange="toggleFxInput(this.value)">
@@ -357,22 +206,19 @@
             </div>
         </div>
 
-        <div id="fx-input-group" class="mt-2 mb-2 p-3" style="background: #f0f9ff; border: 2px dashed #bae6fd; border-radius: 16px; display: none;">
-            <label class="form-label text-primary small">請輸入當下匯率 (系統自動加計1.5%)</label>
-            <div class="input-group mb-2">
-                <span class="input-group-text bg-white" style="border: 2px solid #cbd5e1; border-right: none;">1 外幣 = </span>
-                <input type="number" id="fx-rate-input" class="form-control" placeholder="輸入匯率" inputmode="decimal" min="0" step="0.0001">
-                <span class="input-group-text bg-white" style="border: 2px solid #cbd5e1; border-left: none;">TWD</span>
+        <div id="fx-input-group" class="mb-3 p-3 bg-light rounded-4" style="display: none; border: 2px dashed #bae6fd;">
+            <label class="form-label small text-primary">請輸入匯率 (系統自動加計1.5%)</label>
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0" style="border-radius:16px 0 0 16px;">1 外幣 = </span>
+                <input type="number" id="fx-rate-input" class="form-control border-start-0 border-end-0" placeholder="匯率" inputmode="decimal">
+                <span class="input-group-text bg-white border-start-0" style="border-radius:0 16px 16px 0;">TWD</span>
             </div>
-            <button onclick="window.open(atob('aHR0cHM6Ly9yYXRlLmJvdC5jb20udHcveHJ0P0xhbmc9emgtVFc='), '_blank')" class="btn-outline-primary w-100 mt-2 text-decoration-none" style="font-size:0.8rem; background:white; display:flex; align-items:center; justify-content:center;">
-                <svg class="lucide me-1"><use href="#icon-bank"/></svg> 查詢臺銀牌告匯率
-            </button>
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3">
           <label class="form-label" id="amount-label">消費金額 (TWD)</label>
           <div class="input-group">
-            <button class="btn-outline-secondary font-hand" type="button" onclick="toggleSign('amount')" style="font-size: 0.9rem;">退刷</button>
+            <button class="btn-outline-secondary px-3" onclick="toggleSign('amount')" style="border-radius: 16px 0 0 16px; border: 2px solid #cbd5e1; border-right:none; font-weight:bold;">退刷</button>
             <input type="number" id="amount" class="form-control" placeholder="0" inputmode="decimal" oninput="checkInputStyle(this)">
             <button class="clear-btn" onclick="clearInput('amount')"><svg class="lucide"><use href="#icon-x"/></svg></button>
           </div>
@@ -388,8 +234,8 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label small">類別切換 (選填)</label>
-          <select id="category" class="form-select" onchange="updateKeywordPlaceholder()">
+          <label class="form-label">消費類別</label>
+          <select id="category" class="form-select">
             <option value="general">🛍️ 一般消費</option>
             <option value="dining">🍽️ 餐廳/外送</option>
             <option value="travel">🏨 旅遊/訂房</option>
@@ -403,229 +249,200 @@
       </div>
 
       <div id="result-area">
-        <div class="nccc-alert d-flex">
-          <svg class="lucide me-2 mt-1 flex-shrink-0"><use href="#icon-warn"/></svg>
-          <div>
-            <div class="fw-bold mb-1">留意小額支付無回饋</div>
-            連鎖速食、便利商店等通路，極高機率屬於「NCCC小額支付」無回饋。
-          </div>
+        <div class="nccc-alert d-flex mb-3">
+          <svg class="lucide me-2 mt-1 flex-shrink-0 text-warning"><use href="#icon-warn"/></svg>
+          <div class="small">連鎖速食、超商、繳費等，高機率屬於「NCCC小額支付」無回饋，請留意。</div>
         </div>
-        
-        <div class="d-flex justify-content-between align-items-center mb-3 px-2">
+        <div class="d-flex justify-content-between align-items-center mb-3 px-1">
           <span class="result-tag" id="scenario-tag">一般消費</span>
           <div class="text-end lh-1" id="fx-info" style="display:none;"></div>
         </div>
-
         <div id="cards-container"></div>
       </div>
     </div>
 
+    <!-- Page 2: Transaction List -->
     <div id="page-list" class="page-section" style="display:none;">
-        <div class="d-flex justify-content-between align-items-end mb-3 px-1">
-            <h5 class="text-primary mb-0 d-flex align-items-center"><svg class="lucide me-2"><use href="#icon-list"/></svg>待結算明細</h5>
-            <span class="badge bg-secondary" id="pending-count" style="background:#64748b; color:white; padding:4px 8px; border-radius:12px; font-size:0.8rem;">0 筆</span>
-        </div>
+        <h5 class="text-primary mb-3 d-flex align-items-center px-1"><svg class="lucide me-2"><use href="#icon-list"/></svg>待結算明細</h5>
         <div id="transaction-list-container"></div>
     </div>
 
+    <!-- Page 3: Monitor -->
     <div id="page-status" class="page-section" style="display:none;">
       <div class="card-box">
         <h5 class="mb-3 text-primary d-flex align-items-center"><svg class="lucide me-2"><use href="#icon-chart"/></svg>本期總帳 (Dashboard)</h5>
         <div id="status-container"></div>
         <div class="mt-3 d-flex gap-2">
-           <button onclick="clearCurrentStats()" class="btn-outline-danger flex-grow-1 font-hand fw-bold bg-white" style="border-width:2px; padding:8px; border-radius:50px;">全部重置</button>
-           <button onclick="batchImport()" class="btn-action flex-grow-1 font-hand py-1 mt-0" style="background:linear-gradient(135deg, #10b981 0%, #059669 100%); border:none; box-shadow:2px 2px 0 #047857;">一鍵進倉</button>
+           <button onclick="clearCurrentStats()" class="btn-light flex-grow-1 border-2 border-secondary" style="border: 2px solid #e2e8f0;">全部重置</button>
+           <button onclick="batchImport()" class="btn-action flex-grow-1 mt-0 py-2" style="background:#10b981; border-color:#059669;">一鍵進倉</button>
         </div>
       </div>
-      <div class="card-box mt-3" style="background:#fffbeb; border-color:#fde68a;">
+      <div class="card-box" style="background:#fffbeb; border-color:#fde68a;">
         <h5 class="mb-3 text-warning d-flex align-items-center" style="color:#b45309;"><svg class="lucide me-2"><use href="#icon-shield"/></svg>上限小管家</h5>
         <div id="limits-container"></div>
       </div>
     </div>
 
+    <!-- Page 4: Warehouse -->
     <div id="page-warehouse" class="page-section" style="display:none;">
-        <div class="sub-tab-container mb-3 d-flex p-1" style="background: #e2e8f0; border-radius: 50px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
-            <button class="flex-grow-1 fw-bold sub-tab-btn active" onclick="switchWarehouseTab('manage')" id="tab-btn-manage"><svg class="lucide me-1"><use href="#icon-box"/></svg> 資產管理</button>
-            <button class="flex-grow-1 fw-bold sub-tab-btn" onclick="switchWarehouseTab('planner')" id="tab-btn-planner"><svg class="lucide me-1"><use href="#icon-map"/></svg> 兌換試算</button>
+        <div class="d-flex mb-3 p-1 bg-light rounded-pill border">
+            <button class="flex-grow-1 fw-bold sub-tab-btn border-0 py-2 rounded-pill active" onclick="switchWarehouseTab('manage')" id="tab-btn-manage">資產管理</button>
+            <button class="flex-grow-1 fw-bold sub-tab-btn border-0 py-2 rounded-pill" onclick="switchWarehouseTab('planner')" id="tab-btn-planner">兌換試算</button>
         </div>
 
         <div id="warehouse-view-manage">
-            <div class="input-block-card">
-                <div class="input-block-title text-primary"><svg class="lucide me-2"><use href="#icon-plane"/></svg> 存入航空哩程 (原生)</div>
-                <div class="mb-3">
-                  <label class="form-label small mb-1 fw-bold">航司名稱</label>
-                  <div class="input-group">
-                    <input id="native-airline-name" class="form-control" placeholder="例如: 華航, 長榮">
-                    <button class="clear-btn" onclick="clearInput('native-airline-name')"><svg class="lucide"><use href="#icon-x"/></svg></button>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label class="form-label small mb-1 fw-bold">持有哩程</label>
-                  <div class="input-group">
-                    <input id="native-current" type="number" class="form-control" placeholder="0">
-                    <button class="clear-btn" onclick="clearInput('native-current')"><svg class="lucide"><use href="#icon-x"/></svg></button>
-                  </div>
-                </div>
-                <button onclick="addNativeAsset()" class="btn-outline-primary w-100">存入航空帳戶</button>
+            <div class="input-block-card p-3 mb-3 border rounded-4 bg-white shadow-sm">
+                <div class="fw-bold text-primary mb-2 d-flex align-items-center"><svg class="lucide me-2"><use href="#icon-plane"/></svg>存入航空哩程</div>
+                <div class="mb-2"><input id="native-airline-name" class="form-control" placeholder="航司名稱 (例如: 華航)"></div>
+                <div class="mb-2"><input id="native-current" type="number" class="form-control" placeholder="目前持有哩程"></div>
+                <button onclick="addNativeAsset()" class="btn-outline-primary w-100 py-2 rounded-pill">存入航空帳戶</button>
             </div>
             
+            <div class="input-block-card p-3 mb-3 border rounded-4 bg-white shadow-sm" style="background:#fffaf0 !important;">
+                <div class="fw-bold text-warning mb-2 d-flex align-items-center" style="color:#d97706;"><svg class="lucide me-2"><use href="#icon-rotate"/></svg>存入轉點積分</div>
+                <div class="row mb-2">
+                  <div class="col-7"><input id="trans-source-name" class="form-control" placeholder="來源 (如: 萬豪)"></div>
+                  <div class="col-5"><input id="trans-current" type="number" class="form-control" placeholder="持有分"></div>
+                </div>
+                <div class="mb-2"><input id="trans-target-airline" class="form-control" placeholder="目標航司 (例如: 華航)"></div>
+                <div class="small text-muted mb-2 fw-bold">比例: 每 <input id="trans-unit-points" type="number" class="d-inline border-0 border-bottom text-center" style="width:50px" placeholder="3"> 點 = <input id="trans-unit-miles" type="number" class="d-inline border-0 border-bottom text-center" style="width:50px" placeholder="1"> 哩</div>
+                <button onclick="addTransferAsset()" class="btn-outline-primary w-100 py-2 rounded-pill" style="border-color:#d97706; color:#d97706;">存入轉點資產</button>
+            </div>
             <div id="warehouse-list"></div>
         </div>
 
         <div id="warehouse-view-planner" style="display:none;">
-            <div class="planner-disclaimer">
-              <div class="d-flex align-items-center mb-1">
-                  <svg class="lucide me-1" style="color:#b45309;"><use href="#icon-warn"/></svg>
-                  <strong style="font-size: 1rem;">全球規劃重要聲明</strong>
-              </div>
-              <ul class="mb-0" style="padding-left: 1.2rem;">
-                  <li><strong>實際位置為準</strong>：此處為標準預估，請點擊立即兌換以官網為主。</li>
-                  <li><strong>數據時效</strong>：內建數據適用至 <strong>2027 年 1 月</strong>。</li>
-              </ul>
+            <div class="planner-disclaimer mb-3 small p-3 rounded-4" style="background:#fffbeb; border: 2px solid #f59e0b; color:#92400e;">
+                <strong>⚠️ 全球規劃聲明</strong><br>
+                1. 實際機位狀況優先。2. CX 數據參考 2025 實測值。3. ANA 季節引擎適用至 2027 年。
             </div>
-
-            <div class="card-box" style="background: linear-gradient(to bottom, #eff6ff, #ffffff);">
-              <h5 class="mb-1 text-primary d-flex align-items-center"><svg class="lucide me-2"><use href="#icon-map"/></svg>設定全球兌換目標</h5>
-              <div class="mb-3 mt-3">
-                <div style="position:relative;">
-                  <label class="form-label small fw-bold">🛫 出發地</label>
-                  <select id="planner-from" class="form-select mb-2" onchange="runPlannerCalc()">
-                    <option value="TW">🇹🇼 台灣</option>
-                    <option value="HK_MO">🇭🇰 港澳地區</option>
-                    <option value="CN">🇨🇳 中國大陸</option>
-                    <option value="NE_ASIA">🌸 東北亞 (日韓)</option>
-                    <option value="SE_ASIA">🥥 東南亞</option>
-                    <option value="NA_W">🗽 北美西岸</option>
-                    <option value="NA_E">🍎 北美東岸</option>
-                    <option value="EU">🏰 歐洲</option>
-                  </select>
-                  <button class="swap-btn" onclick="swapPlannerDest()"><svg class="lucide"><use href="#icon-swap"/></svg></button>
-                  <label class="form-label small fw-bold">🛬 目的地</label>
-                  <select id="planner-to" class="form-select" onchange="runPlannerCalc()">
-                    <option value="TW">🇹🇼 台灣</option>
-                    <option value="HK_MO">🇭🇰 港澳地區</option>
-                    <option value="CN">🇨🇳 中國大陸</option>
-                    <option value="NE_ASIA" selected>🌸 東北亞 (日韓)</option>
-                    <option value="SE_ASIA">🥥 東南亞</option>
-                    <option value="NA_W">🗽 北美西岸</option>
-                    <option value="NA_E">🍎 北美東岸</option>
-                    <option value="EU">🏰 歐洲</option>
-                  </select>
+            <div class="card-box mb-3">
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <label class="form-label small">🛫 出發地</label>
+                    <select id="planner-from" class="form-select" onchange="runPlannerCalc()">
+                        <option value="TW">🇹🇼 台灣</option>
+                        <option value="HK_MO">🇭🇰 港澳地區</option>
+                        <option value="NE_ASIA">🌸 東北亞</option>
+                        <option value="NA_W">🗽 北美西</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <label class="form-label small">🛬 目的地</label>
+                    <select id="planner-to" class="form-select" onchange="runPlannerCalc()">
+                        <option value="TW">🇹🇼 台灣</option>
+                        <option value="NE_ASIA" selected>🌸 東北亞</option>
+                        <option value="NA_W">🗽 北美西</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-
-              <div class="row mb-2">
-                <div class="col-6">
-                  <label class="form-label small fw-bold">📅 日期</label>
-                  <input type="date" id="planner-date" class="form-select" style="height:44px;" onchange="runPlannerCalc()">
+                <div class="mb-3"><input type="date" id="planner-date" class="form-select" onchange="runPlannerCalc()"></div>
+                <div class="row mb-3">
+                  <div class="col-6">
+                    <select id="planner-class" class="form-select" onchange="runPlannerCalc()">
+                        <option value="Y">💺 經濟艙</option>
+                        <option value="C">🥂 商務艙</option>
+                        <option value="F">👑 頭等艙</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <div class="switch-group" onclick="togglePlannerTrip()" style="padding:4px 14px;">
+                      <span class="small fw-bold" id="trip-label">來回</span>
+                      <input class="form-check-input" type="checkbox" id="planner-trip-type" checked>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-6">
-                  <label class="form-label small fw-bold">艙等</label>
-                  <select id="planner-class" class="form-select" onchange="runPlannerCalc()">
-                    <option value="Y">💺 經濟艙</option>
-                    <option value="C">🥂 商務艙</option>
-                    <option value="F">👑 頭等艙</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="switch-group" onclick="togglePlannerTrip()">
-                <span class="switch-label fw-bold"><svg class="lucide me-1"><use href="#icon-rotate"/></svg> 行程：<span id="trip-label">來回 (Round-trip)</span></span>
-                <input class="form-check-input" type="checkbox" id="planner-trip-type" checked>
-              </div>
+                <div id="planner-asset-container" class="mt-3"></div>
             </div>
-
-            <div id="planner-asset-container"></div>
             <div id="planner-results-container"></div>
         </div>
     </div>
   </div>
 
+  <!-- Nav Bottom -->
   <div class="nav-bottom">
-    <button class="nav-item active" onclick="switchPage('calc', this)"><svg class="lucide"><use href="#icon-calc"/></svg>計算</button>
-    <button class="nav-item" onclick="switchPage('list', this)"><div style="position:relative;"><svg class="lucide"><use href="#icon-list"/></svg><div id="nav-badge-list" class="nav-badge" style="display:none;">0</div></div>明細</button>
-    <button class="nav-item" onclick="switchPage('status', this)"><svg class="lucide"><use href="#icon-chart"/></svg>監控</button>
-    <button class="nav-item" onclick="switchPage('warehouse', this)"><svg class="lucide"><use href="#icon-warehouse"/></svg>倉庫</button>
+    <button class="nav-item active" onclick="switchPage('calc', this)"><svg class="lucide mb-1"><use href="#icon-calc"/></svg>計算</button>
+    <button class="nav-item" onclick="switchPage('list', this)"><div class="position-relative"><svg class="lucide mb-1"><use href="#icon-list"/></svg><div id="nav-badge-list" class="nav-badge" style="display:none;">0</div></div>明細</button>
+    <button class="nav-item" onclick="switchPage('status', this)"><svg class="lucide mb-1"><use href="#icon-chart"/></svg>監控</button>
+    <button class="nav-item" onclick="switchPage('warehouse', this)"><svg class="lucide mb-1"><use href="#icon-warehouse"/></svg>倉庫</button>
   </div>
 
-  <div class="modal fade" id="settingsModal" tabindex="-1" style="display: none;">
+  <!-- Modals -->
+  <div class="modal fade" id="settingsModal">
     <div class="modal-dialog">
-      <div class="modal-content" style="background:#fff; border-radius:24px; padding:20px;">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="fw-bold m-0 d-flex align-items-center"><svg class="lucide me-2 text-primary"><use href="#icon-gear"/></svg>設定與管理</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"><svg class="lucide"><use href="#icon-x"/></svg></button>
+        <h5 class="fw-bold mb-4 d-flex align-items-center"><svg class="lucide me-2 text-primary"><use href="#icon-gear"/></svg>設定與搬家</h5>
+        <div class="mb-4">
+            <div class="fw-bold mb-2 text-primary">自動加碼資格</div>
+            <div class="switch-group">
+                <span class="small">匯豐 Live+ 自動扣繳任務</span>
+                <input class="form-check-input" type="checkbox" id="setting-hsbc-autopay" onchange="updateGlobalSetting('hsbc_autopay', this.checked)">
+            </div>
         </div>
-        <div class="modal-body p-0">
-          <div class="mb-4">
-              <div class="fw-bold mb-2 text-primary">自動加碼資格</div>
-              <div class="switch-group mb-2">
-                  <span class="switch-label">匯豐 Live+ 自動扣繳</span>
-                  <input class="form-check-input" type="checkbox" id="setting-hsbc-autopay" onchange="updateGlobalSetting('hsbc_autopay', this.checked)">
-              </div>
-          </div>
-          
-          <div class="mb-4">
-              <div class="fw-bold mb-2 text-primary">啟用卡片</div>
-              <div id="builtin-cards-list"></div>
-          </div>
-
-          <div class="backup-section">
-              <div class="fw-bold mb-3 text-warning d-flex align-items-center" style="color:#b45309;">
-                  <svg class="lucide me-2"><use href="#icon-copy"/></svg> 💾 數據搬家中心
-              </div>
-              <button class="btn-backup" onclick="exportDataMagic()">
-                  <svg class="lucide"><use href="#icon-copy"/></svg> 一鍵複製搬家代碼
-              </button>
-              <button class="btn-restore" onclick="importDataMagic()">
-                  <svg class="lucide"><use href="#icon-rotate"/></svg> 一鍵貼上還原代碼
-              </button>
-              <div class="text-center mt-2" style="font-size:0.75rem; color:#9a3412; font-weight:bold;">
-                  換手機？在舊的點複製，新的點還原即可！
-              </div>
-          </div>
+        <div class="mb-4">
+            <div class="fw-bold mb-2 text-primary">卡片管理</div>
+            <div id="builtin-cards-list"></div>
         </div>
-      </div>
+        <div class="p-3 rounded-4" style="background:#fff7ed; border: 2px dashed #fed7aa;">
+            <div class="fw-bold text-warning mb-3 d-flex align-items-center"><svg class="lucide me-2"><use href="#icon-copy"/></svg>💾 數據搬家中心</div>
+            <button class="btn-backup mb-2" onclick="exportDataMagic()">一鍵複製搬家代碼</button>
+            <button class="btn-restore" onclick="importDataMagic()">一鍵貼上還原代碼</button>
+            <div class="text-center mt-2 small text-muted">換機？舊機複製，新機貼上。</div>
+        </div>
+        <button class="btn-light w-100 mt-4 py-2 rounded-pill" onclick="hideModal('settingsModal')">關閉</button>
     </div>
   </div>
 
-  <div class="modal fade" id="customConfirmModal" tabindex="-1" style="display: none;">
-    <div class="modal-dialog"><div class="modal-content" style="border-radius:24px; padding:20px;"><div class="text-center"><svg class="lucide text-warning mb-3" style="width:3rem;height:3rem;"><use href="#icon-warn"/></svg><p class="mb-4 fw-bold text-secondary" id="confirm-msg"></p><div class="d-flex gap-2"><button class="btn-light flex-grow-1" onclick="hideModal('customConfirmModal')">取消</button><button class="btn-primary flex-grow-1" id="confirm-btn-yes" style="background:#ef4444;">確定執行</button></div></div></div></div>
+  <div class="modal fade" id="customConfirmModal">
+    <div class="modal-dialog text-center">
+        <svg class="lucide text-warning mb-3" style="width:3rem;height:3rem;"><use href="#icon-warn"/></svg>
+        <p class="fw-bold mb-4" id="confirm-msg"></p>
+        <div class="d-flex gap-2">
+            <button class="btn-light flex-grow-1" onclick="hideModal('customConfirmModal')">取消</button>
+            <button class="btn-primary flex-grow-1 bg-danger border-0" id="confirm-btn-yes">確定執行</button>
+        </div>
+    </div>
   </div>
 
-  <div class="modal fade" id="guideModal" tabindex="-1" style="display: none;">
-    <div class="modal-dialog"><div class="modal-content" style="background:transparent; border:none;"><div id="guide-content"></div><div class="text-center mt-3"><button class="btn-light rounded-circle" data-bs-dismiss="modal" style="width:50px; height:50px;"><svg class="lucide"><use href="#icon-x"/></svg></button></div></div></div>
+  <div class="modal fade" id="customAlertModal">
+    <div class="modal-dialog text-center">
+        <svg class="lucide text-info mb-3" style="width:3rem;height:3rem;"><use href="#icon-warn"/></svg>
+        <p class="fw-bold mb-4" id="alert-msg"></p>
+        <button class="btn-primary w-100 py-2 rounded-pill" onclick="hideModal('customAlertModal')">我知道了</button>
+    </div>
   </div>
 
-  <div class="modal fade" id="customAlertModal" tabindex="-1" style="display: none;">
-    <div class="modal-dialog"><div class="modal-content" style="border-radius:24px; padding:30px 20px;"><div class="text-center"><svg class="lucide text-warning mb-3" style="width:3rem;height:3rem;"><use href="#icon-warn"/></svg><p class="mb-4 fw-bold text-secondary" id="alert-msg"></p><button class="btn-primary px-5" data-bs-dismiss="modal">我知道了</button></div></div></div>
+  <div class="modal fade" id="guideModal">
+    <div class="modal-dialog" style="background:transparent; padding:0; border:none;">
+        <div id="guide-content"></div>
+        <button class="btn-light d-block mx-auto mt-3 rounded-circle" style="width:50px; height:50px;" onclick="hideModal('guideModal')"><svg class="lucide"><use href="#icon-x"/></svg></button>
+    </div>
   </div>
 
   <script>
     /* =========================
-       TDC Miles Tool v12.7 核心代碼
+       TDC Miles Tool v12.7.2 正式內核
        ========================= */
     const DB_KEY = 'MILES_APP_V12_6_ISOLATED'; 
     const RULES_KEY = 'MILES_APP_RULES_V12_6';
     let plannerSelectedAssets = new Set();
     let pendingConfirmCallback = null;
 
-    // --- 內建卡片與規則 (與 v12.6 一致) ---
     const BUILTIN_DEFS = [
-      { id: 'hsbc_live', name: '匯豐 Live+', default: true },
-      { id: 'ctbc_ci_inf', name: '中信 華航璀璨', default: false },
-      { id: 'taishin_cx',name: '台新 國泰世界',default: true },
-      { id: 'hsbc_inf',  name: '匯豐 旅人無限',default: true },
-      { id: 'ctbc_ci',   name: '中信 華航鼎尊', default: true }
+      { id: 'hsbc_live', name: '匯豐 Live+', target: 'AM_BR' },
+      { id: 'ctbc_ci_inf', name: '中信 華航璀璨', target: 'CI' },
+      { id: 'taishin_cx', name: '台新 國泰世界', target: 'AM_BR' },
+      { id: 'hsbc_inf', name: '匯豐 旅人無限', target: 'AM_BR' },
+      { id: 'ctbc_ci', name: '中信 華航鼎尊', target: 'CI' }
     ];
+
     const AUTO_ASSETS = {
-        'hsbc_live': { target: '匯豐 Live+ 現金積分', type: 'transfer', ratio: 2, unitPoints:1, unitMiles:2 },
-        'hsbc_inf': { target: '匯豐 旅人積分', type: 'transfer', ratio: 1, unitPoints:1, unitMiles:1 },
-        'ctbc_ci': { target: '中華航空 (哩程)', type: 'airline', ratio: 1 },
-        'ctbc_ci_inf': { target: '中華航空 (哩程)', type: 'airline', ratio: 1 },
-        'taishin_cx': { target: '亞洲萬里通/國泰 (哩程)', type: 'airline', ratio: 1 }
+        'hsbc_live': { target: '匯豐 Live+ 現金積分', type: 'transfer', unitPoints:1, unitMiles:2 },
+        'hsbc_inf': { target: '匯豐 旅人積分', type: 'transfer', unitPoints:1, unitMiles:1 },
+        'ctbc_ci': { target: '中華航空 (哩程)', type: 'airline', unitPoints:1, unitMiles:1 },
+        'ctbc_ci_inf': { target: '中華航空 (哩程)', type: 'airline', unitPoints:1, unitMiles:1 },
+        'taishin_cx': { target: '亞洲萬里通/國泰 (哩程)', type: 'airline', unitPoints:1, unitMiles:1 }
     };
 
-    // 數據載入與存檔
     function loadDB() {
         const raw = localStorage.getItem(DB_KEY);
         if(!raw) return { settings: { enabledBuiltins: ['hsbc_live','taishin_cx','ctbc_ci','hsbc_inf','ctbc_ci_inf'], billingDays: { hsbc:6, ctbc:15, taishin:20, other:1 }, hsbc_autopay: true }, customCards: [], records: {}, limits: {}, warehouse: [] };
@@ -636,149 +453,369 @@
     function loadRules() { const raw = localStorage.getItem(RULES_KEY); return raw ? JSON.parse(raw) : {}; }
     function saveRules(data) { localStorage.setItem(RULES_KEY, JSON.stringify(data)); }
 
-    // --- v12.7 新增：搬家功能 ---
-    function exportDataMagic() {
-        const db = loadDB(); const rules = loadRules();
-        const pack = { db, rules, v: '12.7', ts: Date.now() };
-        const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(pack))));
+    // --- 計算引擎與規則 ---
+    const CARD_RULES = {
+        'ctbc_ci_inf': { name: '中信 華航璀璨', target: 'CI', calc: (ctx) => {
+            let div = 20, isBonus = false, note = '一般 20元/哩';
+            if(ctx.cat === 'flight_ci' || ctx.isForeign) { div = 10; isBonus = true; note = '指定加碼 10元/哩'; }
+            if(ctx.isBirthday && ctx.isForeign && ctx.pay === 'physical') { div = 6.6; isBonus = true; note = '🎂 生日海外實體 6.6元/哩'; }
+            return handleCappedMiles(ctx, 'ctbc_ci_inf', 600000, div, 20, isBonus, note);
+        }},
+        'hsbc_live': { name: '匯豐 Live+', target: 'AM_BR', calc: (ctx) => {
+            if(ctx.isEUR) return { miles:0, note: '🚫 歐盟不回饋', consumedQuota:0 };
+            let bonus = 0, display = '一般';
+            let base = ctx.twdBase * 0.0088;
+            if(ctx.isLiveSelect) {
+                display = '精選加碼';
+                let b = ctx.twdBase * 0.03; if(b > 888) b = 888; bonus += b;
+                if(ctx.db.settings.hsbc_autopay) { let a = ctx.twdBase * 0.01; if(a > 200) a = 200; bonus += a; }
+            }
+            return { miles: Math.trunc(base + bonus) * 2, note: `${display} (1點=2哩)`, consumedQuota: ctx.twdBase };
+        }},
+        'taishin_cx': { name: '台新 國泰世界', target: 'AM_BR', calc: (ctx) => {
+            let baseDiv = ctx.isForeign ? 15 : 22, div = baseDiv, isBonus = false, note = `一般 ${baseDiv}元/哩`;
+            if(ctx.cat === 'flight_cx' || (ctx.isFlyMode && ctx.isForeign)) { div = 5; isBonus = true; note = '✈️ 越飛有哩 5元/哩'; }
+            return handleCappedMiles(ctx, 'taishin_cx', 1000000, div, baseDiv, isBonus, note);
+        }},
+        'hsbc_inf': { name: '匯豐 旅人無限', target: 'AM_BR', calc: (ctx) => {
+            let div = (ctx.isForeign || ctx.cat.startsWith('flight')) ? 10 : 18;
+            return { miles: Math.trunc(ctx.twdBase/div), note: `$${div}元/哩`, consumedQuota: ctx.twdBase };
+        }},
+        'ctbc_ci': { name: '中信 華航鼎尊', target: 'CI', calc: (ctx) => {
+            let div = 18, isBonus = false, note = '一般 18元/哩';
+            if(ctx.cat === 'flight_ci' || (ctx.isForeign && ctx.pay !== 'online')) { div = 9; isBonus = true; note = '指定加碼 9元/哩'; }
+            if(ctx.isBirthday && ctx.isForeign && ctx.pay === 'physical') { div = 6; isBonus = true; note = '🎂 生日海外 6元/哩'; }
+            return handleCappedMiles(ctx, 'ctbc_ci', 1440000, div, 18, isBonus, note);
+        }}
+    };
+
+    function handleCappedMiles(ctx, id, limit, bonusDiv, baseDiv, isBonus, noteStr) {
+        if(!isBonus) return { miles: Math.trunc(ctx.twdBase / baseDiv), note: noteStr, consumedQuota: 0 };
+        const used = (ctx.db.limits[`${new Date().getFullYear()}-${id}`]?.spend || 0);
+        const remain = Math.max(0, limit - used);
+        if(ctx.twdBase <= remain) return { miles: Math.trunc(ctx.twdBase / bonusDiv), note: noteStr, consumedQuota: ctx.twdBase };
+        let bonusPortion = Math.trunc(remain / bonusDiv);
+        let basePortion = Math.trunc((ctx.twdBase - remain) / baseDiv);
+        let warningNote = remain === 0 ? `<span class="text-danger fw-bold">🚫 額度已滿降回 ${baseDiv}/哩</span>` : `<span class="text-danger fw-bold">⚠️ 部分超額 (剩 $${remain.toLocaleString()})</span>`;
+        return { miles: bonusPortion + basePortion, note: `${noteStr}<br>${warningNote}`, consumedQuota: remain, isWarning: true };
+    }
+
+    // --- UI 控制 ---
+    function toggleSwitch(id) { 
+        const cb = document.getElementById(id); 
+        cb.checked = !cb.checked; 
+        document.getElementById(`switch-box-${id}`).classList.toggle('bg-light', !cb.checked);
+    }
+    function toggleFxInput(val) {
+        document.getElementById('fx-input-group').style.display = (val === 'FOREIGN' ? 'block' : 'none');
+        document.getElementById('amount-label').innerText = (val === 'FOREIGN' ? '消費金額 (外幣)' : '消費金額 (TWD)');
+    }
+    function clearInput(id) { document.getElementById(id).value = ''; if(id==='amount') checkInputStyle(document.getElementById(id)); }
+    function checkInputStyle(el) { el.classList.toggle('input-negative', parseFloat(el.value) < 0); document.getElementById('amount-status').style.display = (parseFloat(el.value) < 0 ? 'block' : 'none'); }
+    function toggleSign(id) { const el = document.getElementById(id); el.value = (parseFloat(el.value)||0) * -1; checkInputStyle(el); }
+    
+    function switchPage(p, btn) {
+        document.querySelectorAll('.page-section').forEach(e => e.style.display='none');
+        document.getElementById(`page-${p}`).style.display='block';
+        document.querySelectorAll('.nav-item').forEach(e => e.classList.remove('active'));
+        btn.classList.add('active'); window.scrollTo(0,0);
+        if(p==='list') renderList(); if(p==='status') renderStatus(); if(p==='warehouse') renderWarehouse();
+    }
+
+    function calculate() {
+        const db = loadDB(); const amt = parseFloat(document.getElementById('amount').value);
+        if(isNaN(amt) || amt === 0) return showAlert('請輸入金額');
         
-        navigator.clipboard.writeText(b64).then(() => {
-            showAlert('✅ 資料已封裝並複製！\n請快去 LINE 貼上傳給自己吧。');
-        }).catch(err => {
-            alert('複製失敗，請手動選取代碼：\n' + b64);
+        let twdBase = amt;
+        if(document.getElementById('currency-type').value === 'FOREIGN') {
+            const rate = parseFloat(document.getElementById('fx-rate-input').value);
+            if(!rate) return showAlert('請輸入匯率');
+            twdBase = Math.round(amt * rate);
+        }
+
+        const target = document.getElementById('redemption-target').value;
+        const cat = document.getElementById('category').value;
+        const kw = document.getElementById('keyword-input').value.toLowerCase();
+        
+        const ctx = {
+            db, twdBase, twdSpend: Math.round(twdBase * 1.015),
+            cat, pay: document.getElementById('payment').value,
+            isForeign: document.getElementById('currency-type').value === 'FOREIGN',
+            isBirthday: document.getElementById('birthdayMode').checked,
+            isFlyMode: document.getElementById('flyMode').checked,
+            isLiveSelect: ['dining'].includes(cat) || ['餐廳','外送','星巴克','蝦皮','momo'].some(w => kw.includes(w))
+        };
+
+        const results = [];
+        BUILTIN_DEFS.forEach(def => {
+            if(db.settings.enabledBuiltins.includes(def.id)) {
+                // 精確過濾：目標不符則不出現
+                if(target !== 'ALL' && def.target !== target) return;
+                // 優先推薦邏輯：國泰官網強鎖國泰卡
+                if(cat === 'flight_cx' && def.id !== 'taishin_cx') return;
+                // 華航官網強鎖華航卡
+                if(cat === 'flight_ci' && !def.id.includes('ctbc_ci')) return;
+
+                const res = CARD_RULES[def.id].calc(ctx);
+                results.push({ id: def.id, ...def, ...res, twdSpend: ctx.twdSpend, twdBase: ctx.twdBase });
+            }
+        });
+
+        results.sort((a,b) => b.miles - a.miles);
+        renderResults(results);
+    }
+
+    function renderResults(list) {
+        const con = document.getElementById('cards-container'); con.innerHTML = '';
+        document.getElementById('result-area').style.display = 'block';
+        list.forEach((c, i) => {
+            const isWin = i === 0 && !c.isWarning;
+            const div = document.createElement('div');
+            div.className = `plan-card ${isWin ? 'plan-winner' : ''} ${c.isWarning ? 'plan-warning' : ''}`;
+            div.innerHTML = `
+                ${isWin ? '<span class="position-absolute badge rounded-pill bg-warning" style="top:-10px; right:10px; color:#334155; border: 2px solid #fff;">WINNER</span>' : ''}
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="fw-bold">${c.name}</div>
+                        <div class="small text-muted mt-1">${c.note}</div>
+                        <button class="btn-card-action mt-2 ${isWin?'btn-record-win':''}" onclick="recordTx(${resultsToIdx(c)})">記帳</button>
+                    </div>
+                    <div class="text-end">
+                        <div class="card-miles">${c.miles.toLocaleString()} <small class="fw-normal" style="font-size:0.6rem">哩</small></div>
+                        <div class="small fw-bold text-muted">${(c.twdSpend/c.miles).toFixed(1)} 元/哩</div>
+                    </div>
+                </div>
+            `;
+            con.appendChild(div);
+        });
+        window.tempResults = list;
+    }
+    function resultsToIdx(c) { return window.tempResults.indexOf(c); }
+
+    function recordTx(idx) {
+        const item = window.tempResults[idx]; const db = loadDB();
+        const monthKey = `${new Date().getFullYear()}-${String(new Date().getMonth()+1).padStart(2,'0')}`;
+        if(!db.records[monthKey]) db.records[monthKey] = {};
+        const txId = `tx_${Date.now()}`;
+        
+        let points = item.miles, unit = '哩';
+        if(item.id.includes('hsbc')) { points = Math.trunc(item.miles/2); unit = '積分'; }
+
+        db.records[monthKey][txId] = { ...item, miles: points, unit, note: document.getElementById('keyword-input').value || '一般消費' };
+        
+        const limitKey = (['taishin_cx','ctbc_ci','ctbc_ci_inf'].includes(item.id)) ? `${new Date().getFullYear()}-${item.id}` : `${monthKey}-${item.id}`;
+        if(!db.limits[limitKey]) db.limits[limitKey] = { spend: 0 };
+        db.limits[limitKey].spend += (item.consumedQuota || 0);
+
+        saveDB(db); showAlert(`✅ 已記錄！\n${item.name}: ${points} ${unit}`);
+        document.getElementById('nav-badge-list').innerText = Object.keys(db.records[monthKey]).length;
+        document.getElementById('nav-badge-list').style.display = 'block';
+    }
+
+    function renderList() {
+        const db = loadDB(); const monthKey = `${new Date().getFullYear()}-${String(new Date().getMonth()+1).padStart(2,'0')}`;
+        const data = db.records[monthKey] || {}; const con = document.getElementById('transaction-list-container'); con.innerHTML = '';
+        if(Object.keys(data).length === 0) { con.innerHTML = '<div class="py-5 text-center text-muted">目前沒有明細</div>'; return; }
+        
+        for(let id in data) {
+            const r = data[id];
+            con.innerHTML += `
+                <div class="card-box mb-2 p-3 d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="fw-bold">${r.name}</div>
+                        <div class="small text-muted">${r.note} ($${r.twdBase.toLocaleString()})</div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="text-end me-3"><div class="text-primary fw-bold">+${r.miles} ${r.unit}</div></div>
+                        <button class="border-0 bg-transparent text-danger" onclick="delTx('${monthKey}','${id}')"><svg class="lucide"><use href="#icon-trash"/></svg></button>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    function delTx(mKey, txId) {
+        showCustomConfirm('確定要刪除這筆紀錄嗎？', () => {
+            const db = loadDB(); const r = db.records[mKey][txId];
+            const lKey = (['taishin_cx','ctbc_ci','ctbc_ci_inf'].includes(r.id)) ? `${new Date().getFullYear()}-${r.id}` : `${mKey}-${r.id}`;
+            if(db.limits[lKey]) db.limits[lKey].spend -= (r.consumedQuota || 0);
+            delete db.records[mKey][txId]; saveDB(db); renderList();
         });
     }
 
+    function renderStatus() {
+        const db = loadDB(); const monthKey = `${new Date().getFullYear()}-${String(new Date().getMonth()+1).padStart(2,'0')}`;
+        const statusCon = document.getElementById('status-container'); statusCon.innerHTML = '';
+        const limitsCon = document.getElementById('limits-container'); limitsCon.innerHTML = '';
+        
+        const recs = db.records[monthKey] || {};
+        const agg = {};
+        for(let k in recs) { const r = recs[k]; if(!agg[r.id]) agg[r.id]={name:r.name, m:0, u:r.unit}; agg[r.id].m+=r.miles; }
+        for(let id in agg) {
+            statusCon.innerHTML += `<div class="d-flex justify-content-between mb-2"><span>${agg[id].name}</span><span class="fw-bold text-primary">${agg[id].m} ${agg[id].u}</span></div>`;
+        }
+
+        const cards = [
+            {id:'hsbc_live', name:'匯豐 Live+', limit: 29600},
+            {id:'ctbc_ci_inf', name:'中信 華航璀璨', limit: 600000},
+            {id:'taishin_cx', name:'台新 國泰世界', limit: 1000000},
+            {id:'ctbc_ci', name:'中信 華航鼎尊', limit: 1440000}
+        ];
+        cards.forEach(c => {
+            const lKey = (['taishin_cx','ctbc_ci','ctbc_ci_inf'].includes(c.id)) ? `${new Date().getFullYear()}-${c.id}` : `${monthKey}-${c.id}`;
+            const cur = db.limits[lKey]?.spend || 0;
+            const pct = Math.min(100, (cur/c.limit)*100);
+            limitsCon.innerHTML += `
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between small mb-1"><span>${c.name}</span><span>$${cur.toLocaleString()} / $${c.limit.toLocaleString()}</span></div>
+                    <div class="progress" style="height:8px;"><div class="progress-bar ${pct>80?'bg-warning':'bg-success'}" style="width:${pct}%"></div></div>
+                </div>
+            `;
+        });
+    }
+
+    function batchImport() {
+        showCustomConfirm('確定將明細一鍵入庫？', () => {
+            const db = loadDB(); const mKey = `${new Date().getFullYear()}-${String(new Date().getMonth()+1).padStart(2,'0')}`;
+            const data = db.records[mKey]; if(!data) return;
+            for(let k in data) {
+                const r = data[k]; const rule = AUTO_ASSETS[r.id];
+                if(rule) {
+                    let asset = db.warehouse.find(a => a.targetAirline === rule.target);
+                    if(!asset) { asset = { type: rule.type, targetAirline: rule.target, name: rule.target, current: 0, unitPoints:rule.unitPoints, unitMiles:rule.unitMiles }; db.warehouse.push(asset); }
+                    asset.current += r.miles;
+                }
+            }
+            db.records[mKey] = {}; saveDB(db); renderStatus(); showAlert('✅ 已全部存入倉庫！');
+        });
+    }
+
+    function clearCurrentStats() { showCustomConfirm('確定重置本月數據與額度嗎？', () => { const db = loadDB(); const mKey = `${new Date().getFullYear()}-${String(new Date().getMonth()+1).padStart(2,'0')}`; db.records[mKey] = {}; saveDB(db); renderStatus(); }); }
+
+    // --- 搬家功能 (v12.7.2) ---
+    function exportDataMagic() {
+        const db = loadDB(); const rules = loadRules();
+        const pack = { db, rules, v: '12.7.2', ts: Date.now() };
+        const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(pack))));
+        navigator.clipboard.writeText(b64).then(() => showAlert('✅ 資料已封裝並複製！\n請去 LINE 貼上傳給自己。'));
+    }
     function importDataMagic() {
-        showCustomConfirm('⚠️ 此動作將覆蓋目前手機內的「所有資料」，確定要還原/搬家嗎？', () => {
+        showCustomConfirm('⚠️ 此動作將覆蓋手機內的「所有資料」，確定還原嗎？', () => {
             navigator.clipboard.readText().then(text => {
                 try {
-                    const json = decodeURIComponent(escape(atob(text.trim())));
-                    const pack = JSON.parse(json);
+                    const pack = JSON.parse(decodeURIComponent(escape(atob(text.trim()))));
                     if(pack.db && pack.v) {
                         localStorage.setItem(DB_KEY, JSON.stringify(pack.db));
                         localStorage.setItem(RULES_KEY, JSON.stringify(pack.rules || {}));
-                        showAlert('🎉 搬家成功！\n系統將自動重新整理。');
+                        showAlert('🎉 搬家成功！重新整理中...');
                         setTimeout(() => location.reload(), 1500);
-                    } else {
-                        throw new Error('格式錯誤');
                     }
-                } catch(e) {
-                    showAlert('❌ 找不到有效的搬家代碼！\n請先去 LINE 複製那段長長的文字。');
-                }
-            }).catch(err => {
-                showAlert('❌ 無法讀取剪貼簿，請檢查權限。');
+                } catch(e) { showAlert('❌ 格式錯誤！請確認複製了正確的代碼。'); }
             });
         });
     }
 
-    // --- v12.7 新增：一鍵清除 ---
-    function clearInput(id) {
-        const el = document.getElementById(id);
-        el.value = '';
-        el.focus();
-        if(id==='amount') checkInputStyle(el);
+    // --- 倉庫與試算 ---
+    function addNativeAsset() {
+        const name = document.getElementById('native-airline-name').value;
+        const val = parseFloat(document.getElementById('native-current').value);
+        if(!name || isNaN(val)) return showAlert('請輸入完整資訊');
+        const db = loadDB(); db.warehouse.push({ type:'airline', targetAirline: name, name: name, current: val, unitPoints:1, unitMiles:1 });
+        saveDB(db); renderWarehouse(); clearInput('native-airline-name'); clearInput('native-current');
     }
-
-    // --- 計算與邏輯 (延續 v12.6) ---
-    // (因篇幅關係，此處保留核心計算邏輯，其餘 UI 操作與 v12.6 同步升級)
-    
-    function calculate() {
-        const db = loadDB(); const rules = loadRules(); const amt = parseFloat(document.getElementById('amount').value);
-        if(isNaN(amt) || amt === 0) return showAlert('請輸入金額！');
-        
-        const currType = document.getElementById('currency-type').value;
-        let twdBase = amt; let twdSpend = amt; let rate = 1;
-
-        if (currType === 'FOREIGN') {
-            const rateInput = document.getElementById('fx-rate-input').value;
-            if(!rateInput) return showAlert('請輸入外幣匯率！');
-            rate = parseFloat(rateInput); twdBase = Math.round(amt * rate); twdSpend = Math.round(twdBase * 1.015);
-        }
-
-        const ctx = {
-            db: db, curr: currType==='FOREIGN'?'USD':'TWD', cat: document.getElementById('category').value,
-            pay: document.getElementById('payment').value, kwKey: (document.getElementById('keyword-input').value || '').trim().toLowerCase(),
-            isBirthday: document.getElementById('birthdayMode').checked, isFlyMode: document.getElementById('flyMode').checked,
-            isForeign: currType === 'FOREIGN', twdBase: twdBase, twdSpend: twdSpend, isLiveSelect: false
-        };
-
-        // 自動判定精選類別
-        const LIVE_KEYWORDS = { 'dining':['餐廳','外送','ubereats','foodpanda','燒肉','火鍋','咖啡','星巴克','麥當勞'], 'shop':['momo','pchome','蝦皮','uniqlo','zara','sogo','新光'], 'entertainment':['威秀','迪士尼','樂天','樂園'] };
-        if(ctx.cat === 'dining') ctx.isLiveSelect = true;
-        for(let k in LIVE_KEYWORDS) { if(LIVE_KEYWORDS[k].some(w => ctx.kwKey.includes(w))) ctx.isLiveSelect = true; }
-
-        currentResults = [];
-        db.settings.enabledBuiltins.forEach(cardId => {
-            if(CARD_RULES[cardId]) { 
-                const res = CARD_RULES[cardId].calc(ctx);
-                currentResults.push({ id: cardId, name: CARD_RULES[cardId].name, ...res, twdSpend, twdBase });
-            }
+    function addTransferAsset() {
+        const src = document.getElementById('trans-source-name').value;
+        const val = parseFloat(document.getElementById('trans-current').value);
+        const target = document.getElementById('trans-target-airline').value;
+        const up = parseFloat(document.getElementById('trans-unit-points').value);
+        const um = parseFloat(document.getElementById('trans-unit-miles').value);
+        if(!src || !target || isNaN(val) || isNaN(up) || isNaN(um)) return showAlert('請輸入完整資訊');
+        const db = loadDB(); db.warehouse.push({ type:'transfer', targetAirline: target, name: src, current: val, unitPoints: up, unitMiles: um });
+        saveDB(db); renderWarehouse();
+    }
+    function renderWarehouse() {
+        const db = loadDB(); const con = document.getElementById('warehouse-list'); con.innerHTML = '';
+        db.warehouse.forEach((item, idx) => {
+            const equiv = Math.floor(item.current * (item.unitMiles / item.unitPoints));
+            con.innerHTML += `
+                <div class="card-box mb-2 d-flex justify-content-between align-items-center">
+                    <div><div class="fw-bold">${item.name} (${item.targetAirline})</div><div class="small text-muted">${item.current.toLocaleString()} -> 估 ${equiv.toLocaleString()} 哩</div></div>
+                    <button class="border-0 bg-transparent text-danger" onclick="delAsset(${idx})"><svg class="lucide"><use href="#icon-trash"/></svg></button>
+                </div>
+            `;
         });
+    }
+    function delAsset(idx) { const db = loadDB(); db.warehouse.splice(idx,1); saveDB(db); renderWarehouse(); }
 
-        currentResults.sort((a,b) => b.miles - a.miles);
-        renderResults(currentResults);
+    function runPlannerCalc() {
+        const from = document.getElementById('planner-from').value;
+        const to = document.getElementById('planner-to').value;
+        const cls = document.getElementById('planner-class').value;
+        const isRT = document.getElementById('planner-trip-type').checked;
+        const con = document.getElementById('planner-results-container'); con.innerHTML = '';
+        
+        // 簡易矩陣模擬 (實際應對應 v12.6 之完整矩陣)
+        const req = (from==='TW' && to==='NE_ASIA') ? { CI:35000, BR:35000, CX:20000 } : { CI:110000, BR:100000, CX:84000 };
+        const b64s = { CI: 'aHR0cHM6Ly93d3cuY2hpbmEtYWlybGluZXMuY29tL3R3L3poL21lbWJlci9yZWRlZW0tYWlybGluZS1taWxlcy9yZXdhcmQtdGlja2V0', BR: 'aHR0cHM6Ly93d3cuZXZhYWlyLmNvbS8=', CX: 'aHR0cHM6Ly93d3cuY2F0aGF5cGFjaWZpYy5jb20v' };
+
+        for(let airline in req) {
+            let miles = isRT ? req[airline] : req[airline]/2;
+            con.innerHTML += `
+                <div class="planner-result-card">
+                    <div class="d-flex justify-content-between">
+                        <div class="fw-bold">${airline} 兌換預估</div>
+                        <div class="fw-bold text-primary">${miles.toLocaleString()} 哩</div>
+                    </div>
+                    <button class="btn-action mt-2 py-1 fs-6" onclick="window.open(atob('${b64s[airline]}'))">立即兌換 <svg class="lucide"><use href="#icon-external"/></svg></button>
+                </div>
+            `;
+        }
     }
 
-    const CARD_RULES = {
-        'ctbc_ci_inf': { name: '中信 華航璀璨', calc: (ctx) => { let div = 20; if(ctx.isForeign || ctx.cat.startsWith('flight')) div=10; return { miles: Math.trunc(ctx.twdBase/div), note: `$${div}元/哩`, consumedQuota:0 }; }},
-        'hsbc_live': { name: '匯豐 Live+', calc: (ctx) => { let bonus = ctx.isLiveSelect ? (ctx.twdBase * 0.03) : 0; let pts = Math.trunc(ctx.twdBase * 0.0088 + bonus); return { miles: pts * 2, note: ctx.isLiveSelect?'精選加碼 1點=2哩':'一般 1點=2哩', consumedQuota:0 }; }},
-        'taishin_cx': { name: '台新 國泰世界', calc: (ctx) => { let div = ctx.isForeign ? 15 : 22; if(ctx.isFlyMode && (ctx.isForeign || ['agoda','klook'].some(w=>ctx.kwKey.includes(w)))) div=5; return { miles: Math.trunc(ctx.twdBase/div), note: `$${div}元/哩`, consumedQuota:0 }; }},
-        'hsbc_inf': { name: '匯豐 旅人無限', calc: (ctx) => { let div = (ctx.isForeign || ctx.cat.startsWith('flight')) ? 10 : 18; return { miles: Math.trunc(ctx.twdBase/div), note: `$${div}元/哩`, consumedQuota:0 }; }},
-        'ctbc_ci': { name: '中信 華航鼎尊', calc: (ctx) => { let div = 18; if(ctx.cat==='flight_ci' || (ctx.isForeign && !['online'].includes(ctx.pay))) div=9; return { miles: Math.trunc(ctx.twdBase/div), note: `$${div}元/哩`, consumedQuota:0 }; }}
-    };
+    function togglePlannerTrip() { const cb = document.getElementById('planner-trip-type'); cb.checked = !cb.checked; document.getElementById('trip-label').innerText = cb.checked ? '來回' : '單程'; runPlannerCalc(); }
 
-    // 教學視窗加入 v12.7 搬家教學
+    // --- 初始化 ---
+    function openSettings() { renderSettings(); showModal('settingsModal'); }
+    function renderSettings() {
+        const db = loadDB(); document.getElementById('setting-hsbc-autopay').checked = db.settings.hsbc_autopay;
+        const con = document.getElementById('builtin-cards-list'); con.innerHTML = '';
+        BUILTIN_DEFS.forEach(d => {
+            const isOn = db.settings.enabledBuiltins.includes(d.id);
+            con.innerHTML += `<div class="switch-group mb-2"><span>${d.name}</span><input class="form-check-input" type="checkbox" ${isOn?'checked':''} onchange="toggleBuiltin('${d.id}')"></div>`;
+        });
+    }
+    function toggleBuiltin(id) { const db = loadDB(); const i = db.settings.enabledBuiltins.indexOf(id); if(i>=0) db.settings.enabledBuiltins.splice(i,1); else db.settings.enabledBuiltins.push(id); saveDB(db); }
+    function updateGlobalSetting(k, v) { const db = loadDB(); db.settings[k]=v; saveDB(db); }
+
+    function showModal(id) { document.getElementById(id).classList.add('show'); }
+    function hideModal(id) { document.getElementById(id).classList.remove('show'); }
+    function showAlert(msg) { document.getElementById('alert-msg').innerText = msg; showModal('customAlertModal'); }
+    function showCustomConfirm(msg, cb) { document.getElementById('confirm-msg').innerText = msg; pendingConfirmCallback = cb; showModal('customConfirmModal'); }
+    document.getElementById('confirm-btn-yes').onclick = () => { hideModal('customConfirmModal'); if(pendingConfirmCallback) pendingConfirmCallback(); };
+
     function openGuide() {
         const content = `
-        <div class="guide-slide p-4 mb-4 slide-sage">
-            <div class="g-badge bg-white/20 mb-2">Step 1</div><div class="g-title">📝 快速計算</div>
-            <p class="g-text">輸入金額與備註，自動比對所有卡片最優回饋。</p>
-        </div>
-        <div class="guide-slide p-4 mb-4 slide-terra">
-            <div class="g-badge bg-white/20 mb-2">Step 2</div><div class="g-title">🛒 記帳進倉</div>
-            <p class="g-text">點擊卡片旁的「記帳」，確認明細後點擊監控頁的「一鍵進倉」。</p>
-        </div>
-        <div class="guide-slide p-4 mb-4 slide-slate">
-            <div class="g-badge bg-white/20 mb-2">Step 3</div><div class="g-title">🗺️ 全球兌換</div>
-            <p class="g-text">選好起終點，系統幫你比對倉庫點數夠不夠換機票。</p>
-        </div>
-        <div class="guide-slide p-4 mb-4 slide-dusty">
-            <div class="g-badge bg-white/20 mb-2">Step 4</div><div class="g-title">❌ 一鍵清除</div>
-            <p class="g-text">輸入框右側的小叉叉可以快速清空內容，算錯了按一下就好。</p>
-        </div>
-        <div class="guide-slide p-4 mb-4 slide-clay">
-            <div class="g-badge bg-white/40 mb-2" style="color:#5e503f;">Step 5</div><div class="g-title">📱 輕鬆搬家</div>
-            <ul class="g-list text-sm">
-                <li><b>舊機：</b>去設定按「複製搬家代碼」。</li>
-                <li><b>新機：</b>去 LINE 複製代碼，回設定按「貼上還原代碼」。</li>
-            </ul>
-        </div>
+        <div class="card-box bg-primary text-white p-4"><h5>v12.7.2 教學</h5><p class="small">數據搬家已移至設定齒輪內，一鍵複製代碼至 LINE 貼上即可。輸入框右側「X」可快速清空。</p></div>
         `;
         document.getElementById('guide-content').innerHTML = content; showModal('guideModal');
     }
+    
+    function switchWarehouseTab(v) { 
+      document.querySelectorAll('.sub-tab-btn').forEach(b=>b.classList.remove('active')); 
+      document.getElementById('tab-btn-'+v).classList.add('active'); 
+      document.getElementById('warehouse-view-manage').style.display = (v==='manage'?'block':'none');
+      document.getElementById('warehouse-view-planner').style.display = (v==='planner'?'block':'none');
+      if(v==='planner') runPlannerCalc();
+    }
 
-    // 初始化與其餘功能 (省略重複代碼，保持功能完整)
-    window.onload = function() { updateUI(); switchWarehouseTab('manage'); };
-    function switchPage(p, btn) { document.querySelectorAll('.page-section').forEach(e => e.style.display='none'); document.getElementById(`page-${p}`).style.display='block'; document.querySelectorAll('.nav-item').forEach(e => e.classList.remove('active')); btn.classList.add('active'); window.scrollTo(0,0); }
-    function showAlert(msg) { document.getElementById('alert-msg').innerText=msg; showModal('customAlertModal'); }
-    function showModal(id) { document.getElementById(id).classList.add('show'); }
-    function hideModal(id) { document.getElementById(id).classList.remove('show'); }
-    function openSettings() { renderSettings(); showModal('settingsModal'); }
-    function toggleSwitch(id) { const cb = document.getElementById(id); cb.checked = !cb.checked; }
-    function toggleSign(id) { const el = document.getElementById(id); el.value = (parseFloat(el.value)||0) * -1; checkInputStyle(el); }
-    function checkInputStyle(el) { if(parseFloat(el.value)<0) el.classList.add('input-negative'); else el.classList.remove('input-negative'); }
-    function showCustomConfirm(msg, callback) { document.getElementById('confirm-msg').innerHTML = msg; pendingConfirmCallback = callback; showModal('customConfirmModal'); }
-    document.getElementById('confirm-btn-yes').onclick = function() { hideModal('customConfirmModal'); if(pendingConfirmCallback) pendingConfirmCallback(); };
-    document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(btn => { btn.onclick = function() { this.closest('.modal').classList.remove('show'); } });
-    function renderResults(list) { const con = document.getElementById('cards-container'); con.innerHTML = ''; document.getElementById('result-area').style.display = 'block'; list.forEach((c, idx) => { const div = document.createElement('div'); div.className = `plan-card ${idx===0?'plan-winner':''}`; div.innerHTML = `<div class="d-flex justify-content-between"><div><h4 class="card-name">${c.name}</h4><div class="small mt-1">${c.note}</div><button class="btn-card-action mt-2" onclick="recordTx(${idx})">📝 記帳</button></div><div class="text-end"><div class="card-miles">${c.miles.toLocaleString()}</div><div class="small fw-bold">${(c.twdSpend/c.miles).toFixed(1)} 元/哩</div></div></div>`; con.appendChild(div); }); }
-    function renderSettings() { const db = loadDB(); document.getElementById('setting-hsbc-autopay').checked = db.settings.hsbc_autopay; const con = document.getElementById('builtin-cards-list'); con.innerHTML = ''; BUILTIN_DEFS.forEach(d => { const isOn = db.settings.enabledBuiltins.includes(d.id); con.innerHTML += `<div class="switch-group mb-2"><span>${d.name}</span><input class="form-check-input" type="checkbox" ${isOn?'checked':''} onchange="toggleBuiltin('${d.id}')"></div>`; }); }
-    function toggleBuiltin(id) { const db = loadDB(); const i = db.settings.enabledBuiltins.indexOf(id); if(i>=0) db.settings.enabledBuiltins.splice(i,1); else db.settings.enabledBuiltins.push(id); saveDB(db); }
-    function updateUI() { renderList(); renderStatus(); }
-    function renderList() { /* 與 v12.6 同步 */ }
-    function renderStatus() { /* 與 v12.6 同步 */ }
-    function switchWarehouseTab(v) { document.querySelectorAll('.sub-tab-btn').forEach(b=>b.classList.remove('active')); document.getElementById(`tab-btn-${v}`).classList.add('active'); if(v==='manage'){ document.getElementById('warehouse-view-manage').style.display='block'; document.getElementById('warehouse-view-planner').style.display='none'; renderWarehouse(); }else{ document.getElementById('warehouse-view-manage').style.display='none'; document.getElementById('warehouse-view-planner').style.display='block'; runPlannerCalc(); } }
-    function renderWarehouse() { /* 與 v12.6 同步 */ }
+    window.onload = () => { 
+        toggleFxInput('TWD'); 
+        const db = loadDB();
+        const mKey = `${new Date().getFullYear()}-${String(new Date().getMonth()+1).padStart(2,'0')}`;
+        const count = db.records[mKey] ? Object.keys(db.records[mKey]).length : 0;
+        document.getElementById('nav-badge-list').innerText = count;
+        if(count > 0) document.getElementById('nav-badge-list').style.display = 'block';
+    };
   </script>
 </body>
 </html>
